@@ -1,1 +1,1 @@
-# parallel_programming_lab_1
+### Investigation of the features of the implementation of the classical matrix multiplication algorithm
