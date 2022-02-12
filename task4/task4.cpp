@@ -47,7 +47,7 @@ int* create_matrix(int size) {
 
 void fill_matrix(int* matrix, int size, int left_border, int right_border) {
     for (int i = 0; i < size * size; i++) {
-        matrix[i] = rand() % left_border - right_border;
+        matrix[i] = rand() % right_border - left_border;
     }
 }
 

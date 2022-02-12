@@ -10,7 +10,7 @@ void print_matrix(int**, int);
 int** multiply_matrix(int**, int**, int);
 double calculate_multiply_time(int**, int**, int);
 
-const int SIZE = 512;
+const int SIZE = 2048;
 const int LEFT_BORDER = -10;
 const int RIGHT_BORDER = 10;
 
@@ -53,7 +53,7 @@ int** create_matrix(int size) {
 void fill_matrix(int** matrix, int size, int left_border, int right_border) {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
-            matrix[i][j] = rand() % left_border - right_border;
+            matrix[i][j] = rand() % right_border - left_border;
         }
     }
 }
