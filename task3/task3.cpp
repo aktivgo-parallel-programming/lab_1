@@ -35,7 +35,8 @@ int main()
     delete_matrix(matrix_2, SIZE);
 }
 
-int** create_matrix(int size) {
+int** create_matrix(int size)
+{
     int** matrix = new int* [size];
     for (int i = 0; i < size; i++) {
         matrix[i] = new int[size];
@@ -50,7 +51,8 @@ int** create_matrix(int size) {
     return matrix;
 }
 
-void fill_matrix(int** matrix, int size, int left_border, int right_border) {
+void fill_matrix(int** matrix, int size, int left_border, int right_border)
+{
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             matrix[i][j] = rand() % right_border - left_border;
@@ -58,13 +60,15 @@ void fill_matrix(int** matrix, int size, int left_border, int right_border) {
     }
 }
 
-void delete_matrix(int** matrix, int size) {
+void delete_matrix(int** matrix, int size)
+{
     for (int i = 0; i < size; i++) {
         delete[] matrix[i];
     }
 }
 
-void print_matrix(int** matrix, int size) {
+void print_matrix(int** matrix, int size)
+{
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             std::cout << matrix[i][j] << " ";
@@ -73,7 +77,8 @@ void print_matrix(int** matrix, int size) {
     }
 }
 
-int** multiply_matrix(int** matrix_1, int** matrix_2, int size) {
+int** multiply_matrix(int** matrix_1, int** matrix_2, int size)
+{
     int** result = create_matrix(size);
     for (int k = 0; k < size; k++) {
         for (int j = 0; j < size; j++) {
@@ -86,7 +91,8 @@ int** multiply_matrix(int** matrix_1, int** matrix_2, int size) {
     return result;
 }
 
-double calculate_multiply_time(int** matrix_1, int** matrix_2, int size) {
+double calculate_multiply_time(int** matrix_1, int** matrix_2, int size)
+{
     std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
     start = std::chrono::high_resolution_clock::now();
     int** result = multiply_matrix(matrix_1, matrix_2, SIZE);
