@@ -11,7 +11,7 @@ int** multiply_matrix(int**, int**, int);
 double calculate_multiply_time(int**, int**, int);
 
 const int SIZE = 2048;
-const int LEFT_BORDER = -10;
+const int LEFT_BORDER = 0;
 const int RIGHT_BORDER = 10;
 
 int main()
