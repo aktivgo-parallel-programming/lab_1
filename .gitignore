@@ -1,5 +1,7 @@
+.idea
 .vs
 
+cmake-build-debug
 Debug
 Release
 x64
