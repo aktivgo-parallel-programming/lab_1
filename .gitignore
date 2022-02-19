@@ -2,6 +2,7 @@
 .vs
 
 cmake-build-debug
+cmake-build-release
 Debug
 Release
 x64
