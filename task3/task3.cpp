@@ -101,8 +101,8 @@ double calculate_multiply_time(int** matrix_1, int** matrix_2, int size)
     end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diff = end - start;
 
-    print_matrix(result, size);
-    std::cout << std::endl;
+    /*print_matrix(result, size);
+    std::cout << std::endl;*/
 
     return diff.count();
 }
