@@ -10,13 +10,13 @@ void print_matrix(int**, int);
 int** multiply_matrix(int**, int**, int);
 double calculate_multiply_time(int**, int**, int);
 
-const int SIZE = 2048;
+const int SIZE = 512;
 const int LEFT_BORDER = 0;
-const int RIGHT_BORDER = 10;
+const int RIGHT_BORDER = 10 + 1;
 
 int main()
 {
-    srand(time(0));
+    srand(time(nullptr));
 
     int** matrix_1 = create_matrix(SIZE);
     int** matrix_2 = create_matrix(SIZE);
@@ -80,9 +80,9 @@ void print_matrix(int** matrix, int size)
 int** multiply_matrix(int** matrix_1, int** matrix_2, int size)
 {
     int** result = create_matrix(size);
-    for (int k = 0; k < size; k++) {
+    for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
-            for (int i = 0; i < size; i++) {
+            for (int k = 0; k < size; k++) {
                 result[i][j] += matrix_1[i][k] * matrix_2[k][j];
             }
         }
@@ -95,8 +95,14 @@ double calculate_multiply_time(int** matrix_1, int** matrix_2, int size)
 {
     std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
     start = std::chrono::high_resolution_clock::now();
-    int** result = multiply_matrix(matrix_1, matrix_2, SIZE);
+
+    int** result = multiply_matrix(matrix_1, matrix_2, size);
+
     end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diff = end - start;
+
+    print_matrix(result, size);
+    std::cout << std::endl;
+
     return diff.count();
 }
