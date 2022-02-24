@@ -65,6 +65,8 @@ void delete_matrix(int** matrix, int size)
     for (int i = 0; i < size; i++) {
         delete[] matrix[i];
     }
+
+    delete []matrix;
 }
 
 void print_matrix(int** matrix, int size)
